@@ -21,8 +21,8 @@ const siteUrl = "https://marketing-v1.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Jordan Vale — Freelance marketer. This page is the sample.",
-    template: "%s · Jordan Vale",
+    default: "Wilson Narea — Freelance marketer. This page is the sample.",
+    template: "%s · Wilson Narea",
   },
   description:
     "I'm a freelance marketer who writes and builds landing pages that turn visitors into customers. You're looking at one right now.",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Jordan Vale — Freelance marketer. This page is the sample.",
+    title: "Wilson Narea — Freelance marketer. This page is the sample.",
     description:
       "Landing pages that earn their scroll. The one you're reading is the portfolio piece.",
-    siteName: "Jordan Vale",
+    siteName: "Wilson Narea",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jordan Vale — Freelance marketer. This page is the sample.",
+    title: "Wilson Narea — Freelance marketer. This page is the sample.",
     description:
       "Landing pages that earn their scroll. The one you're reading is the portfolio piece.",
   },

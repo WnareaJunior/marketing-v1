@@ -3,8 +3,6 @@ import ProductVisual from "./components/ProductVisual";
 /* --------------------------------------------------------------- */
 /* Primitives                                                       */
 /* --------------------------------------------------------------- */
-/* Placeholder personal brand — swap "Jordan Vale" for your name.   */
-
 function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2 font-display font-bold tracking-tight ${className}`}>
@@ -19,10 +17,10 @@ function Wordmark({ className = "" }: { className?: string }) {
           fontWeight="700"
           fill="var(--color-bg)"
         >
-          JV
+          WN
         </text>
       </svg>
-      Jordan Vale
+      Wilson Narea
     </span>
   );
 }
@@ -38,7 +36,7 @@ function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/75 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="text-lg" aria-label="Jordan Vale, home">
+        <a href="#top" className="text-lg" aria-label="Wilson Narea, home">
           <Wordmark />
         </a>
         <ul className="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
@@ -80,7 +78,7 @@ function Hero() {
           </h1>
 
           <p className="anim-rise d-3 mt-6 max-w-[52ch] text-lg leading-relaxed text-muted">
-            I&apos;m Jordan Vale. I write and build landing pages that turn
+            I&apos;m Wilson Narea. I write and build landing pages that turn
             visitors into customers — like the one you&apos;re on. You&apos;re a
             few seconds in and still reading, which is precisely the point.
           </p>
@@ -283,7 +281,7 @@ function CTA() {
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="mailto:hello@jordanvale.com?subject=Landing%20page%20project"
+            href="mailto:wilson@jetstone.com?subject=Landing%20page%20project"
             className="shine rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5"
           >
             Start a project
@@ -305,9 +303,29 @@ function CTA() {
 /* --------------------------------------------------------------- */
 
 const footerCols = [
-  { title: "Services", links: ["Landing pages", "Copywriting", "Positioning", "A/B testing"] },
-  { title: "Work", links: ["Recent projects", "Case studies", "Testimonials"] },
-  { title: "Elsewhere", links: ["Email", "LinkedIn", "X / Twitter", "Read.cv"] },
+  {
+    title: "Services",
+    links: [
+      { label: "Landing pages", href: "#services" },
+      { label: "Copywriting", href: "#services" },
+      { label: "Positioning", href: "#services" },
+      { label: "A/B testing", href: "#services" },
+    ],
+  },
+  {
+    title: "Work",
+    links: [
+      { label: "Results", href: "#results" },
+      { label: "Clients", href: "#clients" },
+    ],
+  },
+  {
+    title: "Elsewhere",
+    links: [
+      { label: "Email", href: "mailto:wilson@jetstone.com" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/wilson-narea-b94941191" },
+    ],
+  },
 ];
 
 function Footer() {
@@ -326,19 +344,28 @@ function Footer() {
             <nav key={col.title} aria-label={col.title}>
               <h4 className="text-sm font-semibold text-ink">{col.title}</h4>
               <ul className="mt-4 space-y-3 text-sm text-muted">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="transition-colors hover:text-ink">
-                      {l}
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((l) => {
+                  const external = l.href.startsWith("http");
+                  return (
+                    <li key={l.label}>
+                      <a
+                        href={l.href}
+                        className="transition-colors hover:text-ink"
+                        {...(external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                      >
+                        {l.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 text-sm text-muted sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Jordan Vale. Yes, even the footer is copy.</p>
+          <p>© {new Date().getFullYear()} Wilson Narea. Yes, even the footer is copy.</p>
           <div className="flex gap-6">
             <a href="#" className="transition-colors hover:text-ink">Privacy</a>
             <a href="#" className="transition-colors hover:text-ink">Terms</a>
