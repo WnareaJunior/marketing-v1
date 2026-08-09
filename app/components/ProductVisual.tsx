@@ -1,7 +1,7 @@
 /**
- * ProductVisual — a crafted SVG "live operations" panel.
- * Serves as the hero's imagery: a believable product surface rather
- * than a colored placeholder block. Pure SVG + CSS, no runtime cost.
+ * ProductVisual — a crafted SVG marketing-analytics panel.
+ * Serves as the hero's imagery: a believable "conversions are up"
+ * dashboard rather than a colored placeholder block. Pure SVG + CSS.
  */
 export default function ProductVisual() {
   // Area-chart geometry (shared by stroke + fill).
@@ -13,7 +13,7 @@ export default function ProductVisual() {
     <svg
       viewBox="0 0 480 360"
       role="img"
-      aria-label="Lumen dashboard showing a live service-health timeline, latency trend, and per-signal breakdown"
+      aria-label="Analytics panel showing conversions trending up over 30 days, with a breakdown by traffic source"
       className="w-full h-auto"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -38,19 +38,19 @@ export default function ProductVisual() {
         <circle cx="48" cy="36" r="4" fill="var(--color-line)" />
         <circle cx="62" cy="36" r="4" fill="var(--color-line)" />
         <rect x="360" y="26" width="88" height="20" rx="10" fill="var(--color-surface)" />
-        <circle cx="374" cy="36" r="3.5" fill="var(--color-primary)" className="animate-pulse" />
-        <text x="384" y="40" fontSize="10" fontWeight="600" fill="var(--color-muted)" fontFamily="var(--font-sans)">
-          live · 12ms
+        <circle cx="372" cy="36" r="3.5" fill="var(--color-primary)" className="animate-pulse" />
+        <text x="382" y="40" fontSize="10" fontWeight="600" fill="var(--color-muted)" fontFamily="var(--font-sans)">
+          live · +2.4×
         </text>
       </g>
       <line x1="20" y1="58" x2="460" y2="58" stroke="var(--color-line)" />
 
       {/* section title */}
       <text x="28" y="86" fontSize="13" fontWeight="700" fill="var(--color-ink)" fontFamily="var(--font-display)">
-        Service health
+        Conversions
       </text>
       <text x="28" y="102" fontSize="10" fill="var(--color-muted)" fontFamily="var(--font-sans)">
-        p95 latency · last 60 min
+        signups from this page · last 30 days
       </text>
 
       {/* chart */}
@@ -76,9 +76,9 @@ export default function ProductVisual() {
       {/* breakdown rows */}
       <g transform="translate(28 300)" fontFamily="var(--font-sans)">
         {[
-          { label: "api-gateway", w: 210, tone: "var(--color-primary)" },
-          { label: "checkout", w: 150, tone: "var(--color-primary)" },
-          { label: "search", w: 96, tone: "var(--color-accent)" },
+          { label: "organic", w: 210, tone: "var(--color-primary)" },
+          { label: "referral", w: 150, tone: "var(--color-primary)" },
+          { label: "paid social", w: 96, tone: "var(--color-accent)" },
         ].map((row, i) => (
           <g key={row.label} transform={`translate(0 ${i * 18})`}>
             <text x="0" y="8" fontSize="9.5" fill="var(--color-muted)">

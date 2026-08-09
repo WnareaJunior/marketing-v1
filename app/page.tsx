@@ -3,32 +3,42 @@ import ProductVisual from "./components/ProductVisual";
 /* --------------------------------------------------------------- */
 /* Primitives                                                       */
 /* --------------------------------------------------------------- */
+/* Placeholder personal brand — swap "Jordan Vale" for your name.   */
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2 font-display font-bold tracking-tight ${className}`}>
-      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-        <rect x="1" y="1" width="20" height="20" rx="6" fill="var(--color-primary)" />
-        <circle cx="11" cy="11" r="3.4" fill="var(--color-bg)" />
-        <circle cx="11" cy="11" r="6.2" fill="none" stroke="var(--color-bg)" strokeOpacity="0.55" strokeWidth="1.4" />
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="1" y="1" width="22" height="22" rx="7" fill="var(--color-primary)" />
+        <text
+          x="12"
+          y="16.5"
+          textAnchor="middle"
+          fontFamily="var(--font-display)"
+          fontSize="11"
+          fontWeight="700"
+          fill="var(--color-bg)"
+        >
+          JV
+        </text>
       </svg>
-      Lumen
+      Jordan Vale
     </span>
   );
 }
 
 const navLinks = [
-  { label: "Product", href: "#features" },
-  { label: "Platform", href: "#showcase" },
-  { label: "Customers", href: "#logos" },
-  { label: "Pricing", href: "#cta" },
+  { label: "Services", href: "#services" },
+  { label: "Results", href: "#results" },
+  { label: "Work", href: "#clients" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/75 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="text-lg" aria-label="Lumen home">
+        <a href="#top" className="text-lg" aria-label="Jordan Vale, home">
           <Wordmark />
         </a>
         <ul className="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
@@ -40,20 +50,12 @@ function Nav() {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-2">
-          <a
-            href="#cta"
-            className="hidden rounded-full px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-surface sm:inline-block"
-          >
-            Sign in
-          </a>
-          <a
-            href="#cta"
-            className="shine rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-px"
-          >
-            Start free
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="shine rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-px"
+        >
+          Start a project
+        </a>
       </nav>
     </header>
   );
@@ -70,36 +72,36 @@ function Hero() {
         <div>
           <span className="anim-rise d-1 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold text-primary-strong">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            New — Signal graph, now in general availability
+            Freelance marketer · landing pages &amp; conversion copy
           </span>
 
           <h1 className="anim-rise d-2 mt-6 text-[clamp(2.5rem,6vw,4.25rem)] font-bold leading-[1.02]">
-            Operational clarity for teams that ship.
+            This page is the sample.
           </h1>
 
           <p className="anim-rise d-3 mt-6 max-w-[52ch] text-lg leading-relaxed text-muted">
-            Lumen turns scattered product and infrastructure signals into one
-            live picture — so your team catches what matters before customers
-            ever notice.
+            I&apos;m Jordan Vale. I write and build landing pages that turn
+            visitors into customers — like the one you&apos;re on. You&apos;re a
+            few seconds in and still reading, which is precisely the point.
           </p>
 
           <div className="anim-rise d-4 mt-9 flex flex-wrap items-center gap-3">
             <a
-              href="#cta"
+              href="#contact"
               className="shine rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5"
             >
-              Start free
+              Start a project
             </a>
             <a
-              href="#showcase"
+              href="#services"
               className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface"
             >
-              See how it works
+              See what I do
             </a>
           </div>
 
           <p className="anim-rise d-5 mt-6 text-sm text-muted">
-            Free for 14 days · No credit card · SOC 2 Type II
+            Booking new projects · Replies within a day · Fixed-price, no surprises
           </p>
         </div>
 
@@ -116,20 +118,20 @@ function Hero() {
 }
 
 /* --------------------------------------------------------------- */
-/* Logo cloud                                                       */
+/* Client cloud                                                     */
 /* --------------------------------------------------------------- */
 
-const customers = ["Northwind", "Aperture", "Lattice", "Foundry", "Kelvin", "Meridian"];
+const clients = ["Northwind", "Aperture", "Lattice", "Foundry", "Kelvin", "Meridian"];
 
-function Logos() {
+function Clients() {
   return (
-    <section id="logos" className="border-y border-line bg-surface/60">
+    <section id="clients" className="border-y border-line bg-surface/60">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <p className="text-center text-sm text-muted">
-          Trusted by engineering and product teams at
+          Pages shipped for founders and teams at
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          {customers.map((c) => (
+          {clients.map((c) => (
             <span
               key={c}
               className="font-display text-lg font-semibold text-ink/45 transition-colors hover:text-ink/70"
@@ -144,10 +146,10 @@ function Logos() {
 }
 
 /* --------------------------------------------------------------- */
-/* Features (bento — deliberately varied sizes)                    */
+/* Services (bento — deliberately varied sizes)                    */
 /* --------------------------------------------------------------- */
 
-function Feature({
+function Service({
   title,
   children,
   icon,
@@ -171,77 +173,77 @@ function Feature({
   );
 }
 
-function Features() {
+function Services() {
   return (
-    <section id="features" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <section id="services" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
       <div className="max-w-2xl">
         <h2 className="text-[clamp(1.9rem,4vw,2.75rem)] font-bold leading-tight">
-          One place to see how your system really behaves.
+          Everything a page needs to earn its scroll.
         </h2>
         <p className="mt-4 text-lg text-muted">
-          Stop stitching dashboards together at 2am. Lumen connects the signals
-          you already emit and makes the story obvious.
+          Strategy, copy, design, and build — from one person who owns the whole
+          outcome, not just a slice of it. (This one took about a week.)
         </p>
       </div>
 
       <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {/* Lead feature spans two columns on large screens */}
-        <Feature
+        {/* Lead service spans two columns on large screens */}
+        <Service
           className="lg:col-span-2"
-          title="The signal graph"
-          icon={<IconGraph />}
+          title="Landing pages, end to end"
+          icon={<IconLayers />}
         >
-          Metrics, traces, logs, and deploys linked automatically. Click any
-          spike and walk the dependency graph to the service that caused it —
-          no query language required.
-        </Feature>
+          Positioning, copy, design, and a fast, responsive build — one brief,
+          one owner, one page that ships. Exactly like the one you&apos;re
+          reading right now.
+        </Service>
 
-        <Feature title="Anomaly detection" icon={<IconPulse />}>
-          Baselines learn your traffic patterns and flag the deviations that
-          matter, not the noise.
-        </Feature>
+        <Service title="Conversion copywriting" icon={<IconPen />}>
+          Words that do the selling. Headlines, hooks, and CTAs written against
+          what actually converts, not what sounds clever.
+        </Service>
 
-        <Feature title="Root-cause traces" icon={<IconTarget />}>
-          Every alert opens on the exact trace, span, and line of code behind
-          it.
-        </Feature>
+        <Service title="Messaging & positioning" icon={<IconTarget />}>
+          Figure out what to say before how to say it — the part most pages
+          skip, and the reason they fall flat.
+        </Service>
 
-        <Feature
+        <Service
           className="md:col-span-2"
-          title="Alerts that route themselves"
-          icon={<IconRoute />}
+          title="Analytics & A/B testing"
+          icon={<IconPulse />}
         >
-          Ownership follows your service catalog, so the right on-call engineer
-          is paged with full context — and everyone else stays asleep.
-        </Feature>
+          Launch isn&apos;t the finish line. I wire up analytics and run tests so
+          the page keeps getting sharper — and you can see the number move.
+        </Service>
       </div>
     </section>
   );
 }
 
 /* --------------------------------------------------------------- */
-/* Showcase (dark)                                                 */
+/* Results (dark)                                                  */
 /* --------------------------------------------------------------- */
 
-function Showcase() {
+function Results() {
   return (
-    <section id="showcase" className="overflow-hidden bg-night text-night-ink">
+    <section id="results" className="overflow-hidden bg-night text-night-ink">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 py-24 sm:px-8 lg:grid-cols-2">
         <div>
           <h2 className="text-[clamp(1.9rem,4vw,2.75rem)] font-bold leading-tight text-night-ink">
-            From a spike to the root cause in under a minute.
+            The proof is the page you&apos;re on.
           </h2>
           <p className="mt-5 max-w-[54ch] text-lg leading-relaxed text-night-muted">
-            When something moves, Lumen already has the context. Teams that
-            switch resolve incidents faster and spend less time guessing.
+            Every project is measured against one thing: did it move the number
+            that matters? Here&apos;s what that&apos;s tended to look like.
           </p>
 
           <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-night-line pt-8">
             {[
-              { v: "63%", k: "lower mean time to resolution" },
-              { v: "12ms", k: "median query latency across signals" },
-              { v: "4.9B", k: "events ingested every day" },
-              { v: "99.99%", k: "platform uptime, measured externally" },
+              { v: "2.4×", k: "median conversion lift after a rebuild" },
+              { v: "~10 days", k: "typical turnaround, brief to launch" },
+              { v: "40+", k: "pages shipped for founders and teams" },
+              { v: "100%", k: "fixed-price — you know the cost up front" },
             ].map((s) => (
               <div key={s.k}>
                 <dt className="font-display text-3xl font-bold text-night-ink">{s.v}</dt>
@@ -269,27 +271,28 @@ function Showcase() {
 
 function CTA() {
   return (
-    <section id="cta" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
       <div className="field relative overflow-hidden rounded-3xl border border-line bg-surface px-6 py-16 text-center sm:px-12">
         <h2 className="mx-auto max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-bold leading-tight">
-          Give your team a clear view of production.
+          Want one of these for your product?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-          Connect your first service in minutes. Invite the whole team — Lumen
-          is free while you evaluate.
+          If this page kept you reading, picture one built for what
+          you&apos;re launching. Tell me about it — I&apos;ll tell you how
+          I&apos;d sell it.
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="#top"
+            href="mailto:hello@jordanvale.com?subject=Landing%20page%20project"
             className="shine rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5"
           >
-            Start free
+            Start a project
           </a>
           <a
             href="#top"
             className="rounded-full border border-line bg-bg px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2"
           >
-            Talk to us
+            Re-read the sample
           </a>
         </div>
       </div>
@@ -302,9 +305,9 @@ function CTA() {
 /* --------------------------------------------------------------- */
 
 const footerCols = [
-  { title: "Product", links: ["Overview", "Signal graph", "Alerting", "Integrations", "Changelog"] },
-  { title: "Company", links: ["About", "Careers", "Blog", "Customers"] },
-  { title: "Resources", links: ["Docs", "Status", "Security", "Contact"] },
+  { title: "Services", links: ["Landing pages", "Copywriting", "Positioning", "A/B testing"] },
+  { title: "Work", links: ["Recent projects", "Case studies", "Testimonials"] },
+  { title: "Elsewhere", links: ["Email", "LinkedIn", "X / Twitter", "Read.cv"] },
 ];
 
 function Footer() {
@@ -315,8 +318,8 @@ function Footer() {
           <div>
             <Wordmark className="text-lg" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Operational clarity for teams that ship. Built for engineers,
-              readable by everyone.
+              Freelance marketer. Landing pages that earn their scroll — copy,
+              design, and build from one pair of hands.
             </p>
           </div>
           {footerCols.map((col) => (
@@ -335,11 +338,11 @@ function Footer() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 text-sm text-muted sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Lumen, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jordan Vale. Yes, even the footer is copy.</p>
           <div className="flex gap-6">
             <a href="#" className="transition-colors hover:text-ink">Privacy</a>
             <a href="#" className="transition-colors hover:text-ink">Terms</a>
-            <a href="#" className="transition-colors hover:text-ink">Status</a>
+            <a href="#contact" className="transition-colors hover:text-ink">Contact</a>
           </div>
         </div>
       </div>
@@ -359,20 +362,19 @@ const strokeProps = {
   strokeLinejoin: "round" as const,
 };
 
-function IconGraph() {
+function IconLayers() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" {...strokeProps} aria-hidden="true">
-      <circle cx="6" cy="18" r="2.4" />
-      <circle cx="18" cy="6" r="2.4" />
-      <circle cx="18" cy="17" r="2.2" />
-      <path d="M7.7 16.3 16 7.5M8 17.2h7.7" />
+      <path d="M12 3 21 8l-9 5-9-5 9-5Z" />
+      <path d="M3 13l9 5 9-5" />
     </svg>
   );
 }
-function IconPulse() {
+function IconPen() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" {...strokeProps} aria-hidden="true">
-      <path d="M3 12h4l2.5-6 4 12 2.5-6H21" />
+      <path d="M4 20h4L20 8a2.1 2.1 0 0 0-3-3L5 17v3Z" />
+      <path d="M14.5 6.5l3 3" />
     </svg>
   );
 }
@@ -385,12 +387,10 @@ function IconTarget() {
     </svg>
   );
 }
-function IconRoute() {
+function IconPulse() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" {...strokeProps} aria-hidden="true">
-      <circle cx="6" cy="6" r="2.4" />
-      <circle cx="18" cy="18" r="2.4" />
-      <path d="M6 8.4v4.1a4 4 0 0 0 4 4h5.6" />
+      <path d="M3 12h4l2.5-6 4 12 2.5-6H21" />
     </svg>
   );
 }
@@ -405,9 +405,9 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Logos />
-        <Features />
-        <Showcase />
+        <Clients />
+        <Services />
+        <Results />
         <CTA />
       </main>
       <Footer />

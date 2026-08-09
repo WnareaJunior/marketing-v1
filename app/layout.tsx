@@ -16,30 +16,36 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const siteUrl = "https://lumen.example.com";
+const siteUrl = "https://marketing-v1.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Lumen — Operational clarity for teams that ship",
-    template: "%s · Lumen",
+    default: "Jordan Vale — Freelance marketer. This page is the sample.",
+    template: "%s · Jordan Vale",
   },
   description:
-    "Lumen turns scattered product and infrastructure signals into one live picture, so your team catches what matters before customers do.",
-  keywords: ["observability", "analytics", "operations", "monitoring", "dashboards"],
+    "I'm a freelance marketer who writes and builds landing pages that turn visitors into customers. You're looking at one right now.",
+  keywords: [
+    "freelance marketer",
+    "landing pages",
+    "conversion copywriting",
+    "messaging",
+    "positioning",
+  ],
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Lumen — Operational clarity for teams that ship",
+    title: "Jordan Vale — Freelance marketer. This page is the sample.",
     description:
-      "Turn scattered product and infrastructure signals into one live picture your whole team can read.",
-    siteName: "Lumen",
+      "Landing pages that earn their scroll. The one you're reading is the portfolio piece.",
+    siteName: "Jordan Vale",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumen — Operational clarity for teams that ship",
+    title: "Jordan Vale — Freelance marketer. This page is the sample.",
     description:
-      "Turn scattered product and infrastructure signals into one live picture your whole team can read.",
+      "Landing pages that earn their scroll. The one you're reading is the portfolio piece.",
   },
 };
 
